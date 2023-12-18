@@ -21,7 +21,7 @@ function App() {
   }, [noticiaId]);
 
   return (
-    <div className="App">
+    <div className="App d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
       <div className="card" style={{ width: '18rem' }}>
         <img src={bannerNoticias} className="card-img-top" alt="Avances de noticias" />
         <div className="card-body">
