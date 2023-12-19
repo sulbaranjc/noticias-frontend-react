@@ -1,0 +1,16 @@
+/* HeadApp.css */
+
+/* Asegúrate de que el título se centre correctamente */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el título */
+.navbar-brand h1 {
+  margin-left: 10px; /* Ajusta según sea necesario */
+  text-align: center;
+  color : blue;
+  flex-grow: 1; /* Ocupa el espacio disponible */
+}
