@@ -1,0 +1,77 @@
+/* Estilos Globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #141316;
+  font-size: 1.125rem;
+  display: grid;
+  min-block-size: 100vh;
+  place-content: center;
+  color: white;
+}
+
+/* Estilos de la Lista y sus Elementos */
+.tag-list {
+  list-style: none;
+  background-color: #2E2D35;
+  display: flex; /* Asegura que los elementos de lista estén en línea */
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+  white-space: nowrap; /* Evita saltos de línea innecesarios */
+  padding-inline-start: 0; /* Elimina el padding predeterminado de las listas */
+  margin-block-start: 0; /* Elimina el margen predeterminado de las listas */
+  margin-block-end: 0;
+}
+
+.tag-list li {
+  padding-right: 20px;
+  border-right: 2px solid #7C7ADE;
+}
+
+/* Estilos del Scroller */
+.scroller {
+  width: 800px; /* O el ancho que prefieras */
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.scroller__inner {
+  display: flex; /* Asegura que los elementos de lista estén en línea */
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+  gap: 1rem;
+  padding-block: 1rem; /* Añade padding vertical para .scroller__inner */
+  animation: scroll var(--animation-duration, 40s) linear infinite; /* Animación aplicada aquí */
+}
+
+/* Variables para controlar la animación */
+:root {
+  --animation-duration: 40s; /* Duración por defecto de la animación */
+  --animation-direction: forwards; /* Dirección por defecto de la animación */
+}
+
+/* Estilos específicos para controlar la dirección y la velocidad de la animación */
+.scroller[data-direction="right"] {
+  --animation-direction: reverse; /* Anima hacia la derecha */
+}
+
+.scroller[data-direction="left"] {
+  --animation-direction: forwards; /* Anima hacia la izquierda (valor predeterminado) */
+}
+
+.scroller[data-speed="fast"] {
+  --animation-duration: 20s; /* Velocidad rápida de la animación */
+}
+
+.scroller[data-speed="slow"] {
+  --animation-duration: 60s; /* Velocidad lenta de la animación */
+}
+
+/* Definición de Keyframes para la animación */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* Desplaza el doble del contenido para el desplazamiento infinito */
+}

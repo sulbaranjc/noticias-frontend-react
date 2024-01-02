@@ -1,4 +1,5 @@
 import './App.css';
+import InfiniteScrollBanner from './components/InfiniteScrollBanner';
 import Noticia from './components/Noticia';
 import Titulo from './components/Titulo';
 import NavbarApp from './components/NavbarApp.jsx';
@@ -17,7 +18,14 @@ function App() {
       </Row>
       <Row>
         <Col md={4}><Noticia /></Col>
-        <Col md={8}><BloqueNoticiasEstaticas /></Col>
+        <Col md={8}>
+          <Row className="justify-content-md-center">
+            <Col><InfiniteScrollBanner/></Col>
+          </Row>      
+          <Row>
+          <BloqueNoticiasEstaticas />
+          </Row>
+        </Col>
       </Row>
       <Row>
         <Col><FooterApp/></Col>
