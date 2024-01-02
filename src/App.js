@@ -13,8 +13,8 @@ function App() {
       <Row>
         <Col><Titulo /></Col>
       </Row>
-      <Row>
-        <Col><NavbarApp/></Col>
+      <Row className="justify-content-md-center">
+        <Col md={12}><NavbarApp/></Col>
       </Row>
       <Row>
         <Col md={4}><Noticia /></Col>

@@ -3,22 +3,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; 
 }
 
 body {
-  background: #141316;
   font-size: 1.125rem;
   display: grid;
   min-block-size: 100vh;
   place-content: center;
-  color: white;
 }
 
 /* Estilos de la Lista y sus Elementos */
 .tag-list {
   list-style: none;
-  background-color: #2E2D35;
   display: flex; /* Asegura que los elementos de lista estén en línea */
   flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
   white-space: nowrap; /* Evita saltos de línea innecesarios */

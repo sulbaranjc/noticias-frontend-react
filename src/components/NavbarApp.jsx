@@ -5,22 +5,23 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function BasicExample() {
   return (
-    <Navbar expand="lg" variant="dark" className="bg-dark"> {/* Modo oscuro aquí */}
+    <Navbar expand="lg" variant="ligth" className="bg-ligth"> {/* Modo oscuro aplicado */}
       <Container>
-        <Navbar.Brand href="#home">Home</Navbar.Brand> {/* Asegúrate de poner tu logo o texto aquí */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Sucesos</Nav.Link>
-            <Nav.Link href="#link">Politica</Nav.Link>
+          {/* Centra los elementos dentro de la barra de navegación */}
+          <Nav className="mx-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#sucesos">Sucesos</Nav.Link>
+            <Nav.Link href="#politica">Politica</Nav.Link>
             <NavDropdown title="Deportes" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Futbol</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="#futbol">Futbol</NavDropdown.Item>
+              <NavDropdown.Item href="#baloncesto">
                 Baloncesto
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Tenis</NavDropdown.Item>
+              <NavDropdown.Item href="#tenis">Tenis</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="#otros-deportes">
                 Otros deportes
               </NavDropdown.Item>
             </NavDropdown>
