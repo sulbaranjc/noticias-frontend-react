@@ -11,7 +11,7 @@ const InfiniteScrollBanner = () => {
   }, []);
 
   return (
-    <div className="scroller" data-animated="true">
+    <div className="scroller border rounded mb-3" data-animated="true">
       <div className="scroller__inner" ref={scrollerInnerRef}>
         <ul className="tag-list">
           <li>BTC: $42,346</li>

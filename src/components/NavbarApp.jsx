@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function BasicExample() {
   return (
-    <Navbar expand="lg" variant="ligth" className="bg-ligth"> {/* Modo oscuro aplicado */}
+    <Navbar expand="lg" variant="ligth" className="bg-ligth"> {/* Modo oscuro claro */}
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
