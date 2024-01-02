@@ -1,24 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import bannerNoticias from '../Banner-noticias.jpg';
 
 function Noticia() {
   const [noticia, setNoticia] = useState({ titulo: '', desarrollo: '' });
   const [noticiaId, setNoticiaId] = useState(0);
+  const [currentEndpointIndex, setCurrentEndpointIndex] = useState(0);
+
+  const endpoints = useMemo(() => [
+    'http://127.0.0.1:8000/api/noticias/siguiente/',
+    'http://127.0.0.1:8010/api/noticias/siguiente/'
+  ], []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      axios.get(`http://127.0.0.1:8000/api/noticias/siguiente/${noticiaId}`)
-        .then(response => {
-          /* console.log(response.data) */
-          setNoticia(response.data);
-          setNoticiaId(response.data.id);
-        })
-        .catch(error => console.log(error));
-    }, 5000);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${endpoints[currentEndpointIndex]}${noticiaId}`);
+        setNoticia(response.data);
+        setNoticiaId(response.data.id);
+      } catch (error) {
+        console.log(`Error en el endpoint ${endpoints[currentEndpointIndex]}`);
+        if (currentEndpointIndex === 0) {
+          setCurrentEndpointIndex(1); // Cambia al segundo endpoint si falla el primero
+        } else {
+          setCurrentEndpointIndex(0); // Cambia al primer endpoint si falla el segundo
+        }
+      }
+    };
 
-    return () => clearInterval(interval);
-  }, [noticiaId]);
+    const interval = setInterval(fetchData, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [noticiaId, currentEndpointIndex, endpoints]); // Incluimos endpoints como dependencia
 
   return (
     <div className="">
