@@ -10,6 +10,7 @@ function Noticia() {
     const interval = setInterval(() => {
       axios.get(`http://127.0.0.1:8000/api/noticias/siguiente/${noticiaId}`)
         .then(response => {
+          /* console.log(response.data) */
           setNoticia(response.data);
           setNoticiaId(response.data.id);
         })
